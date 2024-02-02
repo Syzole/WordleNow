@@ -4794,7 +4794,6 @@ const WORDS = [
     'beaky',
     'terry',
     'infra',
-    'spivs',
     'tuans',
     'belli',
     'bergs',

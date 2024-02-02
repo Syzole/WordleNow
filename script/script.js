@@ -67,7 +67,7 @@ function init() {
 
             if(continueGame&&row==height){
                 continueGame = false;
-                document.getElementById("correctAnswer").innerText = word;
+                document.getElementById("correctAnswer").innerText = "The correct answer is: " + word.toUpperCase();
             }
         }
     ); 
