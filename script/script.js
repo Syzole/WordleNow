@@ -6,12 +6,14 @@ let row = 0;
 let col = 0;
 let continueGame = true;
 let word = WORDS[Math.floor(Math.random() * WORDS.length)];
+//recreate a qwerty keyboard
+let letters = "QWERTYUIOPASDFGHJKLZXCVBNM";
 
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     console.log("For testing the word is " + word);
-
+    printKeyboard();
     //Make board
     for (let i = 0;i<height;i++) {
         for (let j = 0;j<width;j++) {
@@ -71,6 +73,8 @@ function init() {
             }
         }
     ); 
+
+
 }
 
 function update(){
@@ -82,14 +86,23 @@ function update(){
         letter = letter.toLowerCase();
 
         if(word[i]==letter){
+            letter = letter.toUpperCase();
             currentTile.classList.add(`correct`);
+            //document.getElementById(letter).classList.remove(`key`);
+            document.getElementById(letter).classList.add(`correct`);
             correct++;
         }
         else if(word.includes(letter)){
+            letter = letter.toUpperCase();
             currentTile.classList.add(`present`);
+            //document.getElementById(letter).classList.remove(`key`);
+            document.getElementById(letter).classList.add(`present`);
         }
         else{
+            letter = letter.toUpperCase();
             currentTile.classList.add(`absent`);
+            //document.getElementById(letter).classList.remove(`key`);
+            document.getElementById(letter).classList.add(`absent`);
         }
 
         if (correct==width){
@@ -119,3 +132,37 @@ function checkIfWordIsInList(){
         return false;
     }
 }
+
+function printKeyboard() {
+    let k1 = document.getElementById("keyR1");
+    let k2 = document.getElementById("keyR2");
+    let k3 = document.getElementById("keyR3");
+    
+    for (let i = 0; i < 26; i++) {
+        let letter = document.createElement('button');
+        letter.innerHTML = letters[i];
+        letter.classList.add('key'); // Add the 'key' class to each button
+        letter.addEventListener('click', function() {
+            clickOnKey(letters[i]);
+        });
+        letter.id = letters[i];
+        if (i < 10) {
+            k1.appendChild(letter);
+        } else if (i < 19) {
+            k2.appendChild(letter);
+        } else {
+            k3.appendChild(letter);
+        }
+    }
+}
+
+function clickOnKey(key){
+    //want to replicate the keyup event
+    console.log("clicked on " + key);
+    if(!continueGame) {
+        return;
+    }
+    let e = new KeyboardEvent('keyup', {'code': 'Key' + key});
+    document.dispatchEvent(e);
+}
+    

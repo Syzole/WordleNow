@@ -55,3 +55,28 @@ hr{
     color: white;
     border-color: white;
 }
+
+.key {
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px; 
+    margin-bottom: 10px;
+    height: 3cm; /* Adjust the height as needed */
+    width: 3cm;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+}
+
+/* Create a flex container for each row */
+#keyR1, #keyR2, #keyR3 {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 100%;
+    margin-bottom: 20px;   
+    margin-top: 10px;
+    margin-right: 10px; 
+    margin-bottom: 10px;
+    
+}
