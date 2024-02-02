@@ -45,6 +45,14 @@ hr{
     border-color: white;
 }
 
-.present{}
+.present{
+    background-color: #C9B458;
+    color: white;
+    border-color: white;
+}
 
-.absent{}
+.absent{
+    background-color: gray;
+    color: white;
+    border-color: white;
+}
