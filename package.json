@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "http-server -c-1 -p 8081"
+  },
   "dependencies": {
     "http-server": "^14.1.1",
     "react": "^18.2.0",
