@@ -76,7 +76,9 @@ function init() {
 
 
 }
-
+//TODO: make the keyboard look better and add duplicate letter functionality
+//also add a reset button
+//also add a backspace button
 function update(){
     let correct = 0;
 
