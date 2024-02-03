@@ -1,4 +1,5 @@
 const WORDS = [
+    'faker',
     'which',
     'there',
     'their',
